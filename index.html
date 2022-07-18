@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Type Testing</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="page1" id="main">
+        <p class="line1">CODING SPEED TEST</p>
+        <p class="line2">Test Your Coding Skills!</p>
+        
+        <div class="options" id="options">
+          <select name="timer" id="timer">
+            <option value="60">1 mintue</option>
+            <option value="120">2 mintue</option>
+            <option value="180">3 mintue</option>
+          </select>
+          <select name="levels" id="levels">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+          <button type="button" id="submit-button" >
+            Start test
+          </button>
+        </div>
+      </div>
+      <div class="page2">
+        <div class="calcutation" id="calculation">
+          <!-- <div class="text-checker" id="text-checker"> -->
+          <div class="timedisplay" id="timedisplay">seconds</div>
+          <div class="word" id="word">words/min</div>
+          <!-- </div> -->
+        </div>
+        <div class="display" id="display">
+          <div class="Quote-display" id="Quote-display">Quote</div>
+          <textarea id="Quote-editor" class="Quote-editor"></textarea>
+    
+          <div class="testspeed" id="testspeed"></div>
+        </div>
+      </div>  
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>

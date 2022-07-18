@@ -1,0 +1,98 @@
+#main{
+    text-align: center;
+    background-color: #94B49F ;
+    width: 100%;
+    height:100%;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    transition: 150ms ease-in-out;
+}
+.page2{
+    width: 100%;
+    height:100%;
+    opacity: 0;
+    transition: 450ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.line1{
+    font-size: 90%;
+    padding-top: 10%;
+}
+
+.line2{
+    font-size: 270%;
+    margin-top: 0;
+}
+
+#options{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    align-items: center;
+    /* justify-content: center; */
+    margin-bottom: 2%;
+    
+}
+
+#timer,#levels{
+    padding: 0.5%;
+    margin: 1%;
+    width: 15%;
+}
+
+#submit-button{
+    margin-top: 15%;
+    width:max-content;
+}
+
+#calculation{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: normal;
+    justify-content: center;
+    padding-bottom: 2%;
+
+}
+
+.display{
+    padding: 6px;
+    display: block;
+    width: max-content;
+    height: max-content;
+    background-color: aliceblue;
+    
+
+}
+#Quote-display,#Quote-editor{
+    font-size: large;
+    font-family: Merriweather,serif;
+    line-height: 1.5;
+}
+
+.timedisplay,.word{
+    padding :0 3.5%;
+}
+
+
+.correct{
+    color: green;
+}
+
+.incorrect{
+    color: red;
+}
+
+/* #text-checker{
+    text-align: center;
+} */
