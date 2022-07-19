@@ -1,29 +1,38 @@
-#main{
+
+#page1{
     text-align: center;
     background-color: #94B49F ;
-    width: 100%;
-    height:100%;
+    color: white;
+    width: 100vw ;
+    height:100vh;
     left: 0;
     top: 0;
+    margin: 0;
     opacity: 1;
     transition: 150ms ease-in-out;
 }
 .page2{
     width: 100%;
-    height:100%;
+    height:100vh;
     opacity: 0;
-    transition: 450ms ease-in-out;
+    transition: 150ms ease-in-out;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+
+
 .main{
+    background-color: #CEE5D0;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+
 .line1{
     font-size: 90%;
     padding-top: 10%;
@@ -51,48 +60,61 @@
 }
 
 #submit-button{
-    margin-top: 15%;
+    margin-top: 3%;
     width:max-content;
+    padding: 1%;
+    border-radius: 4%;
 }
 
 #calculation{
+    color: #1A4D2E;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-content: normal;
     justify-content: center;
     padding-bottom: 2%;
-
+    
 }
 
 .display{
-    padding: 6px;
+    background-color: #94B49F ;
+    padding: 2%;
+    border-radius: 1.5%;
     display: block;
     width: max-content;
     height: max-content;
-    background-color: aliceblue;
     
 
 }
+
 #Quote-display,#Quote-editor{
     font-size: large;
     font-family: Merriweather,serif;
-    line-height: 1.5;
+    line-height: 1.3;
+    padding: 1%;
 }
 
 .timedisplay,.word{
     padding :0 3.5%;
+    width: max-content;
+    
 }
 
-
-.correct{
-    color: green;
+.sec{
+    display: flex;
+    flex-direction: column;
+    padding:0 20%;
+    margin-right: 6%;
+    background-color: white;
+    border-radius: 8%;
 }
 
-.incorrect{
-    color: red;
+.word-min{
+    display: flex;
+    flex-direction: column;
+    padding:0 20%;
+    margin-left: 6%;
+    background-color: white;
+    border-radius: 8%;
 }
-
-/* #text-checker{
-    text-align: center;
-} */
