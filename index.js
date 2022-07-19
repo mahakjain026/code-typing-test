@@ -14,21 +14,22 @@ function setQuoteData(data) {
 }
 
 getData();
-
+let tempNetSpeed = 0;
+let tempGrossSpeed = 0;
 //Random quote from json file
 function getRandomQuote() {
-  console.log("hehee")
+  //   console.log("hehee");
   const valueOfLevel = document.querySelector("#levels").value;
-     console.log(quote[valueOfLevel])
+  console.log(quote[valueOfLevel]);
   let randIndex = Math.floor(Math.random() * 3).toString();
   // console.log(randIndex)
-  const page1= document.querySelector(".page1")
-  const page2= document.querySelector(".page2")
-  page1.style.setProperty("opacity","0")
-  page1.addEventListener('transitionend',()=>{
+  const page1 = document.querySelector(".page1");
+  const page2 = document.querySelector(".page2");
+  page1.style.setProperty("opacity", "0");
+  page1.addEventListener("transitionend", () => {
     page1.remove();
-    page2.style.setProperty("opacity","1")
-  })
+    page2.style.setProperty("opacity", "1");
+  });
   if (valueOfLevel === "easy") {
     var text = quote["easy"][randIndex];
     newquotes(text);
@@ -48,7 +49,6 @@ const submitButton = document.querySelector("#submit-button");
 quoteInput.addEventListener("input", callInterval, { once: true });
 
 submitButton.addEventListener("click", getRandomQuote, { once: true }); //as we click on button we get a random quotes
-
 quoteInput.addEventListener("input", () => {
   const arraydisplay = quoteDisplay.querySelectorAll("span");
   const arrayinput = quoteInput.value.split("");
@@ -57,18 +57,15 @@ quoteInput.addEventListener("input", () => {
   arraydisplay.forEach((characterSpan, index) => {
     const character = arrayinput[index];
     if (character == null) {
-      characterSpan.classList.remove("correct");
-      characterSpan.classList.remove("incorrect");
+      characterSpan.style.setProperty("color", "black");
     } else if (arrayinput.length >= arraydisplay.length) {
       getRandomQuote();
     } else {
       if (character === characterSpan.innerText) {
-        characterSpan.classList.add("correct");
-        characterSpan.classList.remove("incorrect");
+        characterSpan.style.setProperty("color", "green");
         rightcount++;
       } else {
-        characterSpan.classList.add("incorrect");
-        characterSpan.classList.remove("correct");
+        characterSpan.style.setProperty("color", "red");
         errorCount++;
       }
     }
@@ -79,23 +76,39 @@ quoteInput.addEventListener("input", () => {
   var totalCount = errorCount + rightcount;
   // console.log("total count = ", totalCount);
 
-  var speed = totalCount / 5 - errorCount;
-  var netTypingspeed = speed / valueOf;
+  var words = totalCount / 5;
+  var wrongWord = errorCount/5;
+  var netTypingspeed =( (words-wrongWord) / valueOftime);
   console.log(netTypingspeed);
+//   console.log(errorCount,"9999999999990")
 
   const arrayWord = quoteDisplay.innerText.split(" ");
   const len = arrayWord.length;
 
-  for(let i=0; i<=len ; i++){
-    console.log(i);
-    document.querySelector("#word").innerText = i+1;
-  }
-  
-  document.querySelector("#testspeed").innerText = netTypingspeed;
-  
+//   document.querySelector("#testspeed").innerText = `${netTypingspeed}`;
+  tempNetSpeed = netTypingspeed;
+  tempGrossSpeed = words/valueOftime;
 });
-function result(){
-  alert("You type with the speed of (WPM)"+" WPM"+"Keep practicing! ")
+
+function result() {
+  let resultSpeed = tempGrossSpeed;
+  const page2 = document.querySelector(".page2");
+  page2.style.setProperty("opacity", "0");
+  const mainDiv = document.querySelector(".main");
+
+
+  let resultAccuracy = `${(tempNetSpeed / resultSpeed) * 100}%`;
+  const page3 = document.createElement("div");
+  const para = document.createElement("p");
+  page3.style.setProperty("opacity", "0");
+
+  para.innerText = `Well... You type with the speed of ${resultSpeed}. ,Your accuracy was  ${resultAccuracy}.`;
+  page3.append(para);
+  page2.addEventListener("transitionend", () => {
+      page2.remove();
+      mainDiv.append(page3);
+      page3.style.setProperty("opacity", "1");
+  });
 }
 
 async function newquotes(text) {
@@ -109,7 +122,7 @@ async function newquotes(text) {
 }
 
 var valueOfTimer = document.querySelector("#timer").value;
-const valueOf = valueOfTimer / 60;
+const valueOftime = valueOfTimer / 60;
 
 function callInterval() {
   timer();
@@ -119,9 +132,10 @@ function callInterval() {
     valueOfTimer--;
     if (!valueOfTimer) {
       timedisplay.innerText = "Time over";
+      const secDiv = document.querySelector(".secondsDiv");
+      secDiv.remove();
       clearInterval(intervalForTyping);
-      quoteInput.addEventListener("keypress",result);
+      quoteInput.addEventListener("keypress", result);
     }
   }
 }
-
