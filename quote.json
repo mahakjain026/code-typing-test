@@ -4,7 +4,7 @@
         "0" : "var car = {type: 'Ford' , model:'Focus'};\nx=re.search('^The.*Pizza$',txt) \n .then(response => response.json())",
         "1":"x=re.search('^The.*Pizza$',txt) \n .then(response => response.json())\n function(int a , int b);\nlet length = fruits.length;\n elem.innerHTML = x;",
         "2":"function(int a,int b); var x; \nelem = document.getElementById(\"demo\"); \n elem.innerHTML = x;  function openFullscreen() {\n  if (elem.requestFullscreen) {\n    elem.requestFullscreen();\n  } else if (elem.webkitRequestFullscreen) { /* Safari */\n    elem.webkitRequestFullscreen();\n  } else if (elem.msRequestFullscreen) {\nelem.msRequestFullscreen(); }} ",
-        "3":"let length = fruits.length;"
+        "3":"let length = fruits.length SELECT * FROM Pets; return 0; function(int a,int b);\n let x = 9.656;x.toExponential(2);x.toExponential(4);\nx.toExponential(6); const persons = [  {firstname : \"Malcom\", lastname: \"Reynolds\"},\n  {firstname : \"Kaylee\", lastname: \"Frye\"},\n  {firstname : \"Jayne\", lastname: \"Cobb\"}];\npersons.map(getFullName);\nfunction getFullName(item)\n{  return [item.firstname,item.lastname].join(\" \");} ; let length = fruits.length;;"
     },
     
     "medium" : 
@@ -17,7 +17,7 @@
 
     "hard" : 
         {
-            "0" : "./error.sh=unicorn.text",
-            "1" : "$myjSON = json_encode($myObj);"
+            "0" : "./error.sh=unicorn.text SELECT * FROM Pets; return 0; function(int a,int b);\n let x = 9.656;x.toExponential(2);x.toExponential(4);\nx.toExponential(6); const persons = [  {firstname : \"Malcom\", lastname: \"Reynolds\"},\n  {firstname : \"Kaylee\", lastname: \"Frye\"},\n  {firstname : \"Jayne\", lastname: \"Cobb\"}];\npersons.map(getFullName);\nfunction getFullName(item)\n{  return [item.firstname,item.lastname].join(\" \");} ; let length = fruits.length;",
+            "1" : "$myjSON = json_encode($myObj) function(int a,int b); var x; \nelem = document.getElementById(\"demo\"); \n elem.innerHTML = x;  function openFullscreen() {\n  if (elem.requestFullscreen) {\n    elem.requestFullscreen();\n  } else if (elem.webkitRequestFullscreen) { /* Safari */\n    elem.webkitRequestFullscreen();\n  } else if (elem.msRequestFullscreen) {\nelem.msRequestFullscreen(); }};"
         }
 }           
