@@ -77,37 +77,49 @@ quoteInput.addEventListener("input", () => {
   // console.log("total count = ", totalCount);
 
   var words = totalCount / 5;
-  var wrongWord = errorCount/5;
-  var netTypingspeed =( (words-wrongWord) / valueOftime);
+  var wrongWord = errorCount / 5;
+  var netTypingspeed = (words - wrongWord) / valueOftime;
   console.log(netTypingspeed);
-//   console.log(errorCount,"9999999999990")
+  //   console.log(errorCount,"9999999999990")
 
   const arrayWord = quoteDisplay.innerText.split(" ");
   const len = arrayWord.length;
 
-//   document.querySelector("#testspeed").innerText = `${netTypingspeed}`;
+  //   document.querySelector("#testspeed").innerText = `${netTypingspeed}`;
   tempNetSpeed = netTypingspeed;
-  tempGrossSpeed = words/valueOftime;
+  tempGrossSpeed = words / valueOftime;
 });
 
 function result() {
-  let resultSpeed = tempGrossSpeed;
   const page2 = document.querySelector(".page2");
   page2.style.setProperty("opacity", "0");
   const mainDiv = document.querySelector(".main");
 
-
-  let resultAccuracy = `${(tempNetSpeed / resultSpeed) * 100}%`;
   const page3 = document.createElement("div");
-  const para = document.createElement("p");
-  page3.style.setProperty("opacity", "0");
+  page3.classList.add("page3Style");
 
-  para.innerText = `Well... You type with the speed of ${resultSpeed}. ,Your accuracy was  ${resultAccuracy}.`;
+  const para = document.createElement("p");
+  para.classList.add("paraStyle");
+  
+  page3.style.setProperty("opacity", "0");
+  const restartButton = document.createElement("button");
+  restartButton.innerText = "RESTART";
+  restartButton.classList.add("restartButton");
+  page3.appendChild(restartButton);
+  restartButton.onclick = function(){window.location.reload();}
+  
+  let resultSpeed = tempGrossSpeed;
+  let resultAccuracy = ((tempNetSpeed / resultSpeed) * 100).toFixed(2);
+  let res = resultAccuracy / 100;
+  let resultNetSpeed = (resultSpeed * res).toFixed(2);
+  para.innerText = `Well... You type with the speed of ${resultSpeed}. Your accuracy was  ${resultAccuracy}%. and your net speed is ${resultNetSpeed}.`;
+  
+  
   page3.append(para);
   page2.addEventListener("transitionend", () => {
-      page2.remove();
-      mainDiv.append(page3);
-      page3.style.setProperty("opacity", "1");
+    page2.remove();
+    mainDiv.append(page3);
+    page3.style.setProperty("opacity", "1");
   });
 }
 
